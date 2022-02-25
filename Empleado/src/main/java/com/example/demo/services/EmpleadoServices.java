@@ -24,6 +24,25 @@ public class EmpleadoServices implements IEmpleadoService {
 	public List<Empleado> buscarEmpleado(int salario) {
 		return empleadoDAO.findBySalario(salario);
 	}
-	
+
+	@Override
+	public Empleado actualizaEmpleado(Empleado emple) {	
+		return empleadoDAO.save(emple);
+	}
+
+	@Override
+	public Empleado guardaEmpleado(Empleado emple) {
+		return empleadoDAO.save(emple);
+	}
+
+	@Override
+	public void eliminaEmpleado(int id) {
+		empleadoDAO.deleteById(id);
+	}
+
+	@Override
+	public Empleado ubicaPorID(int id) {
+		return empleadoDAO.findById(id).get();
+	}
 	
 }
